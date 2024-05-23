@@ -12,6 +12,13 @@
 
 body{
     background: url("img/background.png");
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    color: #f2f2f2;
+    padding: 15px;
 }
 
 .container{
@@ -60,6 +67,7 @@ body{
     width: 100%;
     list-style: none;
     margin-top: 30px;
+    padding: 0;
 
 }
 
@@ -138,6 +146,7 @@ img {
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    
 }
 .share-list-button {
     right: 150px;
@@ -151,3 +160,10 @@ img {
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+
+@media screen and (max-width: 600px) {
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }}
