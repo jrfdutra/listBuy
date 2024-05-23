@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "REM", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    outline: none;
+    font: weight 700px;
+    
+}
+
+body{
+    background: url("img/background.png");
+}
+
+.container{
+    background-color: rgb(101, 21, 138);
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px; /* espa;amento interno*/
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 100px auto 0;
+}
+
+.input-task{
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+
+}
+
+.button-add-task{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #cb298d;
+    font-size: 17px;
+    padding: 0 15px;
+    color: #ffff;
+    font-size: 17px;
+    float: right;
+    cursor: pointer;   
+
+}
+
+.button-add-task:hover{
+    opacity: 0.8;
+} /*Quando o ususario passar o mouse ele fica um pouco trasnslucido*/
+
+.button-add-task:active{
+    opacity: 0.6;
+}/*Quando o usuario clica ele fica mais transparente ainda ainda*/
+
+.list-buy{
+    width: 100%;
+    list-style: none;
+    margin-top: 30px;
+
+}
+
+.task{
+    background-color: rgba(184, 184, 184, 0.397);
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    color: #f2f2f2;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+}
+
+img {
+    height: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.task:hover img {
+    opacity: 1;
+}
+
+.undo-alert {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.undo-alert button {
+    background: none;
+    border: none;
+    color: #f39c12;
+    cursor: pointer;
+}
+
+.undo-alert {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.undo-alert button {
+    background: none;
+    border: none;
+    color: #f39c12;
+    cursor: pointer;
+}
+.completed {
+    text-decoration: line-through;
+    background-color: #f39c12;
+}
+.clear-list-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.share-list-button {
+    right: 150px;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
