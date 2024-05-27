@@ -20,8 +20,8 @@ function addOValordoInput() {
 function deleteTask(index) {
     tempTask = myList[index];
     tempIndex = index;
-    myList.splice(index, 1);
-    viewList();
+    myList.splice(index, 1); 
+    viewList(); 
     showUndoAlert(deleteUndo);
 }
 
@@ -38,11 +38,8 @@ function clearList() {
 }
 
 function shareList() {
-    const title = "myTask - Lista de Compras";
-    const date = new Date().toLocaleDateString('pt-BR');
     const listText = myList.map(item => item.text).join('\n');
-    const message = `${title}\nData: ${date}\n\n${listText}`;
-    const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(listText)}`;
     window.open(whatsappURL, '_blank');
 }
 
@@ -73,17 +70,16 @@ function showUndoAlert(undoFunction) {
     `;
     document.body.appendChild(alertDiv);
 
-    // Remove a alerta após 5 segundos
     const timeout = setTimeout(() => {
         if (alertDiv) {
             document.body.removeChild(alertDiv);
         }
-    }, 5000); // 5000 ms = 5 segundos
+    }, 5000);
 
     if (undoFunction === deleteUndo) {
-        undoTimeout = timeout;
+        undoTimeout = 5000;
     } else if (undoFunction === clearUndo) {
-        undoClearTimeout = timeout;
+        undoClearTimeout = 5000;
     }
 }
 
@@ -103,4 +99,12 @@ function viewList() {
     listComplete.innerHTML = newList;
 }
 
+// Adiciona o evento de clique ao botão de adicionar
 button.addEventListener('click', addOValordoInput);
+
+// Adiciona o evento de pressionar a tecla "Enter" ao campo de entrada
+input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        addOValordoInput();
+    }
+});
