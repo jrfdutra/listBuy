@@ -74,12 +74,12 @@ function showUndoAlert(undoFunction) {
         if (alertDiv) {
             document.body.removeChild(alertDiv);
         }
-    }, 5000);
+    }, 2000);
 
     if (undoFunction === deleteUndo) {
-        undoTimeout = 5000;
+        undoTimeout = 2000;
     } else if (undoFunction === clearUndo) {
-        undoClearTimeout = 5000;
+        undoClearTimeout = 2000;
     }
 }
 
