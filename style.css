@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,72 +6,67 @@
     font-optical-sizing: auto;
     font-style: normal;
     outline: none;
-    font: weight 700px;
-    
+    font-weight: 700;
 }
 
-body{
-    background: url("img/background.png");
+body {
+    background: url("img/background.png") no-repeat center center fixed;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
 
-.title{
+.title {
     color: #f2f2f2;
     padding: 15px;
+    text-align: center;
 }
 
-.container{
+.container {
     background-color: rgb(101, 21, 138);
-    width: 500px;
+    max-width: 500px;
+    width: 90%;
     border-radius: 10px;
-    padding: 20px; /* espa;amento interno*/
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px;
     margin: 100px auto 0;
 }
 
-.input-task{
+.input-task {
     border: none;
     border-radius: 10px;
-    width: 300px;
+    width: calc(100% - 100px);
     height: 40px;
     padding-left: 10px;
-
+    margin-right: 10px;
 }
 
-.button-add-task{
+.button-add-task {
     border: none;
     border-radius: 5px;
     height: 40px;
     background-color: #cb298d;
     font-size: 17px;
     padding: 0 15px;
-    color: #ffff;
-    font-size: 17px;
-    float: right;
-    cursor: pointer;   
-
+    color: #fff;
+    cursor: pointer;
 }
 
-.button-add-task:hover{
+.button-add-task:hover {
     opacity: 0.8;
-} /*Quando o ususario passar o mouse ele fica um pouco trasnslucido*/
+}
 
-.button-add-task:active{
+.button-add-task:active {
     opacity: 0.6;
-}/*Quando o usuario clica ele fica mais transparente ainda ainda*/
+}
 
-.list-buy{
+.list-buy {
     width: 100%;
     list-style: none;
     margin-top: 30px;
     padding: 0;
-
 }
 
-.task{
+.task {
     background-color: rgba(184, 184, 184, 0.397);
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -83,7 +78,6 @@ body{
     color: #f2f2f2;
     margin-bottom: 20px;
     cursor: pointer;
-
 }
 
 img {
@@ -107,6 +101,7 @@ img {
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+
 .undo-alert button {
     background: none;
     border: none;
@@ -114,44 +109,14 @@ img {
     cursor: pointer;
 }
 
-.undo-alert {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-.undo-alert button {
-    background: none;
-    border: none;
-    color: #f39c12;
-    cursor: pointer;
-}
 .completed {
     text-decoration: line-through;
     background-color: #f39c12;
 }
-.clear-list-button {
+
+.clear-list-button, .share-list-button {
     position: fixed;
     bottom: 10px;
-    right: 10px;
-    padding: 10px 20px;
-    background-color: #f39c12;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    
-}
-.share-list-button {
-    right: 150px;
-    bottom: 10px;
-    right: 10px;
     padding: 10px 20px;
     background-color: #f39c12;
     color: #fff;
@@ -161,9 +126,69 @@ img {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+.clear-list-button {
+    right: 10px;
+}
+
+.share-list-button {
+    right: 150px;
+}
+
 @media screen and (max-width: 600px) {
-    .button-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }}
+    .container {
+        margin-top: 50px;
+        padding: 10px;
+    }
+
+    .input-task {
+        width: calc(100% - 60px);
+        margin-right: 5px;
+    }
+
+    .button-add-task {
+        font-size: 15px;
+        padding: 0 10px;
+        height: 36px;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px;
+    }
+
+    .task img {
+        height: 20px;
+    }
+
+    .clear-list-button, .share-list-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .share-list-button {
+        right: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .input-task {
+        width: calc(100% - 50px);
+    }
+
+    .button-add-task {
+        font-size: 14px;
+        padding: 0 8px;
+        height: 34px;
+    }
+
+    .clear-list-button, .share-list-button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
+    .share-list-button {
+        right: 60px;
+    }
+}
