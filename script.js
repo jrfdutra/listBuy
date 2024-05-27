@@ -20,8 +20,8 @@ function addOValordoInput() {
 function deleteTask(index) {
     tempTask = myList[index];
     tempIndex = index;
-    myList.splice(index, 1); 
-    viewList(); 
+    myList.splice(index, 1);
+    viewList();
     showUndoAlert(deleteUndo);
 }
 
@@ -38,8 +38,11 @@ function clearList() {
 }
 
 function shareList() {
+    const title = "myTask - Lista de Compras";
+    const date = new Date().toLocaleDateString('pt-BR');
     const listText = myList.map(item => item.text).join('\n');
-    const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(listText)}`;
+    const message = `${title}\nData: ${date}\n\n${listText}`;
+    const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
 }
 
@@ -70,16 +73,17 @@ function showUndoAlert(undoFunction) {
     `;
     document.body.appendChild(alertDiv);
 
+    // Remove a alerta após 5 segundos
     const timeout = setTimeout(() => {
         if (alertDiv) {
             document.body.removeChild(alertDiv);
         }
-    }, 2000);
+    }, 5000); // 5000 ms = 5 segundos
 
     if (undoFunction === deleteUndo) {
-        undoTimeout = 2000;
+        undoTimeout = timeout;
     } else if (undoFunction === clearUndo) {
-        undoClearTimeout = 2000;
+        undoClearTimeout = timeout;
     }
 }
 
